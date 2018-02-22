@@ -1,0 +1,94 @@
+<!Doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Home</title>
+	<link rel="stylesheet" href="css2/st2.css">
+    <script src="js/scripts.js"></script>
+    <script src = "http://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src = "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+	<div class="container">
+		<header class="header">
+			<a class="Link-title" href="/"> Nature Website</a>
+			<div id="weather1">Bangalore:<span id="weather"></span>
+				<!-- <img src="https://goldentroutwilderness.files.wordpress.com/2012/01/various-weather.jpg" style="width:50px; height:40px; border-top: 30px;margin-top: 0px;float: right;"> -->
+			
+</div>
+<p></p>
+		</header>
+		<nav class="menu">
+			<a href="">Home</a> &nbsp; &nbsp; &nbsp;
+			<a href="about.html">About Us</a> &nbsp; &nbsp; &nbsp;
+			<a href="contact.html">Contact</a>
+		</nav>
+		<aside>
+			<h1> Side Bar </h1>
+		</aside>
+		<article class="main">
+			<!---<img src="http://images.all-free-download.com/images/graphiclarge/trail_nature_landscape_214997.jpg">-->
+			<div id="home-image">
+				<img src="http://images.all-free-download.com/images/graphiclarge/trail_nature_landscape_214997.jpg">
+			</div>
+			<p>The words nature and natural are used for all the things that are normally not made by humans. Things like weather, organisms, landforms, celestial bodies and much more are part of nature. Scientists study the way the parts of nature work. Things that have been made by people are said to be man-made or called artifacts. </p>
+
+			<p>The words nature and natural are used for all the things that are normally not made by humans. Things like weather, organisms, landforms, celestial bodies and much more are part of nature. Scientists study the way the parts of nature work. Things that have been made by people are said to be man-made or called artifacts.</p>
+
+			<p>The words nature and natural are used for all the things that are normally not made by humans. Things like weather, organisms, landforms, celestial bodies and much more are part of nature. Scientists study the way the parts of nature work. Things that have been made by people are said to be man-made or called artifacts.</p>
+		</article>
+		<footer>
+			&copy; 2018 Minimal Website &nbsp;<span class="separator">|</span> Design by <a href="https://wordpress.com/view/sushmitanath800gmailcom.wordpress.com">Sushmita</a>
+		</footer>
+	</div>
+</body>
+</html>
+
+
+<script type="text/javascript">
+	
+	$(function(){
+
+
+		
+		$.ajax({
+
+			url: "http://api.wunderground.com/api/455c828b0d4b0403/conditions/q/IN/Bangalore.json",
+		  	dataType: "json",
+		 	success: function(url) {
+								    console.log(url);
+								    
+									var weather=url.current_observation.temp_c;
+									$("#weather").html(weather);
+									
+									
+									}
+
+			});
+
+		
+		});
+
+</script>
+
+<style type="text/css">
+	
+	#weather1 {
+
+
+		float:right;
+		font-family: Georgia;
+		border:1px solid black;
+		padding: 10px;
+		background-image: url(https://goldentroutwilderness.files.wordpress.com/2012/01/various-weather.jpg);
+		text-decoration-color: blue;
+		text-align: center;
+		font-size: 20px;
+
+		 
+		
+      
+	}
+	
+
+</style>
